@@ -9,18 +9,18 @@ import java.util.List;
  * It contains a list of rooms and a list of reservations.
  */
 public class Hotel {
-    private List<Room> rooms;
-    private List<Reservation> reservations;
+    private final List<Room> rooms;
+    private final List<Reservation> reservations;
     private int nextReservationId = 1;
 
     public Hotel() {
-        this.rooms = new ArrayList<>();
-        this.reservations = new ArrayList<>();
+       rooms = new ArrayList<>();
+        reservations = new ArrayList<>();
     }
 
     // --- Room Management ---
     public void addRoom(Room room) {
-        this.rooms.add(room);
+        rooms.add(room);
         System.out.println("Added room: " + room);
     }
 
@@ -33,7 +33,7 @@ public class Hotel {
     public List<Room> getAvailableRooms() {
         List<Room> availableRooms = new ArrayList<>();
         // Loop through all rooms and add available ones to the new list.
-        for (Room room : this.rooms) {
+        for (Room room : rooms) {
             if (room.isAvailable()) {
                 availableRooms.add(room);
             }
